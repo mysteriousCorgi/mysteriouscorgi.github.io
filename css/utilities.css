@@ -1,0 +1,28 @@
+/* 工具类样式 */
+.title-toggle {
+    text-align: center;
+    color: #1e3791;
+    font-size: 36px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.menu-item[open] summary::before {
+    transform: rotate(360deg);
+}
+
+.menu-item[open] summary {
+    background-color: #efeff0;
+}
+
+/* 防止菜单文字被选中 */
+.menu-item summary,
+.sub-menu,
+.sub-menu a {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+} 
