@@ -1,0 +1,240 @@
+:root {
+    --apple-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: var(--apple-font);
+    background-color: #f5f5f7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #1d1d1f;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.chart-container {
+    position: relative;
+    height: 70vh;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+}
+
+@media (orientation: portrait) {
+    .chart-container {
+        height: 80vh;
+    }
+}
+
+.query-form {
+    background: rgba(255,255,255,0.8);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #1d1d1f;
+    font-size: 14px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #d2d2d7;
+    border-radius: 8px;
+    font-size: 14px;
+    appearance: none;
+    background: #fff url("data:image/svg+xml;charset=utf-8,%3Csvg width='12' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9L1 4h10z' fill='%23666'/%3E%3C/svg%3E") no-repeat right 12px center;
+    background-size: 10px;
+}
+
+.query-btn {
+    background: #007AFF;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.query-btn:hover {
+    background: #0066CC;
+}
+
+.query-result {
+    display: none;
+    background: #f5f5f7;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.query-result.active {
+    display: block;
+}
+
+.result-content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-card {
+    text-align: center;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.score-label {
+    font-size: 14px;
+    color: #86868b;
+    margin-bottom: 8px;
+}
+
+.score-value {
+    font-size: 24px;
+    color: #1d1d1f;
+    font-weight: 500;
+}
+
+.score-diff {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.score-diff.positive {
+    color: #28cd41;
+}
+
+.score-diff.negative {
+    color: #ff3b30;
+}
+
+/* 移动设备适配 */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    .query-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .form-group {
+        width: 100%;
+        min-width: unset;
+    }
+    
+    .query-btn {
+        width: 100%;
+        padding: 12px;
+    }
+    
+    .result-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .score-card {
+        width: 100%;
+    }
+}
+
+/* 横屏提示弹窗 */
+.orientation-tip {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.orientation-tip.show {
+    display: flex;
+}
+
+.tip-content {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+    margin: 20px;
+    max-width: 280px;
+}
+
+.tip-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.tip-text {
+    color: #1d1d1f;
+    font-size: 17px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.tip-btn {
+    background: #007AFF;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 500;
+    width: 100%;
+}
+
+/* 只在移动设备横屏时增加图表高度 */
+@media screen and (max-height: 900px) and (orientation: landscape) {
+    .chart-container {
+        height: 95vh;
+    }
+} 
