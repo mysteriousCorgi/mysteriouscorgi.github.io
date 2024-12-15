@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geekbench 4 电池测试评分查询</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="assets/js/chart.js"></script>
+    <script src="assets/js/hammerjs@2.0.8"></script>
+    <script src="assets/js/chartjs-plugin-zoom.js"></script>
+    <script src="assets/js/chartjs-plugin-crosshair.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Geekbench 4 电池测试评分查询</h1>
+        <div class="data-source">
+            电池测试数据来源于YouTube博主<a href="https://www.youtube.com/@iapplebytes" target="_blank">@iAppleBytes</a>
+        </div>
+        <div class="data-notes">
+            <span class="note">*影响续航的因素有很多，本数据仅供参考。</span>
+            <span class="note">*iPhone 14 机型可能是因为电池问题，该博主没有将其纳入测试。（也有可能博主去年没钱买14）</span>
+        </div>
+        
+        <!-- 添加查询表单 -->
+        <div class="query-form">
+            <div class="form-group">
+                <label for="deviceSelect">选择机型</label>
+                <select id="deviceSelect" class="form-control">
+                    <option value="">请选择iPhone机型</option>
+                    <option value="iPhone 15">iPhone 15</option>
+                    <option value="iPhone 13">iPhone 13</option>
+                    <option value="iPhone 12">iPhone 12</option>
+                    <option value="iPhone 11">iPhone 11</option>
+                    <option value="iPhone XR">iPhone XR</option>
+                    <option value="iPhone SE 2020">iPhone SE 2020</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="currentVersion">当前系统版本</label>
+                <select id="currentVersion" class="form-control">
+                    <option value="">请选择当前iOS版本</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="targetVersion">目标系统版本</label>
+                <select id="targetVersion" class="form-control">
+                    <option value="">请选择目标iOS版本</option>
+                </select>
+            </div>
+            <button id="queryBtn" class="query-btn">查询对比</button>
+        </div>
+
+        <!-- 添加结果显示区域 -->
+        <div id="queryResult" class="query-result"></div>
+
+        <div class="chart-container">
+            <canvas id="batteryChart"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <!-- 横屏提示弹窗 -->
+    <div class="orientation-tip">
+        <div class="tip-content">
+            <div class="tip-icon">📱</div>
+            <div class="tip-text">竖屏会导致折线图无法正常展示，建议将设备横屏。</div>
+            <button class="tip-btn">我知道了！</button>
+        </div>
+    </div>
+</body>
+</html> 
