@@ -53,6 +53,7 @@
 .warranty-menu summary::before { background-image: url('../images/pgcpbxcx.png'); }
 .tools-menu summary::before { background-image: url('../images/sjzs.png'); }
 .block-update-menu summary::before { background-image: url('../images/seting.png'); }
+.calendar-menu summary::before { background-image: url('../images/calendar.png'); }
 
 /* 子菜单样式 */
 .menu-item .content {

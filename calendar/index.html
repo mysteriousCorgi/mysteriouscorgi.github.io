@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>柯基日历增强包</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>柯基日历增强包</h1>
+        </header>
+
+        <div class="box glass">
+            <h2>快速订阅</h2>
+            <div class="button-group">
+                <button class="btn-blue" onclick="copyLink()">复制订阅链接</button>
+                <a href="https://mp.weixin.qq.com/s/Qe-n08LP-tdEVJ6y3qruXA?token=775401445&lang=zh_CN" 
+                   class="btn-green" target="_blank">查看使用教程</a>
+            </div>
+
+            <h2>订阅包含节日</h2>
+            <div class="festivals">
+                <span>腊八节</span><span>北小年</span><span>南小年</span>
+                <span>中元节</span><span>母亲节</span><span>父亲节</span>
+                <span>情人节</span><span>植树节</span><span>愚人节</span>
+                <span>教师节</span><span>万圣夜</span><span>万圣节</span>
+                <span>感恩节</span><span>平安夜</span><span>圣诞节</span>
+            </div>
+            <div class="festivals-note">
+                <span>*苹果官方日历中已自带「中国大陆节假日及调休安排」，本订阅仅作为补充；每年会自动同步更新次年节日，无需重复订阅，免费、无广告、每年更新。</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function copyLink() {
+            navigator.clipboard.writeText('https://rili.callmekeji.com/calendar/keji_calendar_pro.ics')
+                .then(() => {
+                    const btn = document.querySelector('.btn-blue');
+                    const text = btn.textContent;
+                    btn.textContent = '已复制';
+                    setTimeout(() => btn.textContent = text, 2000);
+                });
+        }
+    </script>
+</body>
+</html>
